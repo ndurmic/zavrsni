@@ -1,0 +1,45 @@
+version: "3.2"
+
+services:
+  # DISCOVERY SERVICE
+  discovery:
+    build:
+      context: ./eureka-service
+      dockerfile: Dockerfile
+    ports:
+    - 8761:8761
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://127.0.0.1:5000"
+
+  # SERVICES
+  account:
+    build:
+      context: ./account-service
+      dockerfile: Dockerfile
+    ports:
+    - 8081:8081
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://127.0.0.1:5000"
+    environment:
+     EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    depends_on:
+    - discovery
+
+  todo:
+    build:
+      context: ./todo-service
+      dockerfile: Dockerfile
+    ports:
+    - 9090:9090
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://127.0.0.1:5000"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka
+    depends_on:
+    - discovery

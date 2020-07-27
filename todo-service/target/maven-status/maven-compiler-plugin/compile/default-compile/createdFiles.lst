@@ -1,0 +1,11 @@
+my\demo\springboot\microservice\todo\client\AccountFallbackFactory$1.class
+my\demo\springboot\microservice\todo\api\TodoController.class
+my\demo\springboot\microservice\todo\domain\TodoServiceImpl.class
+my\demo\springboot\microservice\todo\client\AccountClient.class
+my\demo\springboot\microservice\todo\client\Account.class
+my\demo\springboot\microservice\todo\client\AccountFallbackFactory.class
+my\demo\springboot\microservice\todo\TodoConfiguration.class
+my\demo\springboot\microservice\todo\exception\ErrorResult.class
+my\demo\springboot\microservice\todo\exception\ErrorHandler.class
+my\demo\springboot\microservice\todo\TodoServiceApplication.class
+my\demo\springboot\microservice\todo\client\AccountProxy.class

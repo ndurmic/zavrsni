@@ -1,0 +1,6 @@
+my\demo\springboot\microservice\account\AccountServiceApplication.class
+my\demo\springboot\microservice\account\domain\Account.class
+my\demo\springboot\microservice\account\domain\AccountResource.class
+my\demo\springboot\microservice\account\api\AccountController.class
+my\demo\springboot\microservice\account\domain\AccountService.class
+my\demo\springboot\microservice\account\AccountConfiguration.class
