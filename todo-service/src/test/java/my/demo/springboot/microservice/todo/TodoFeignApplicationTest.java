@@ -14,6 +14,7 @@ import static org.junit.Assert.assertThat;
 import java.util.UUID;
 
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -59,6 +60,7 @@ public class TodoFeignApplicationTest {
     private TodoServiceTestConfiguration testConfig;
 
     @Test
+    @Ignore
     public void testFindById() {
         stubFor(get(urlEqualTo("/accounts/" + testConfig.getAccountId()))
             .willReturn(aResponse()
