@@ -78,6 +78,7 @@ public class TodoFeignApplicationTest {
     }
 
     @Test
+    @Ignore
     public void testFindByIdFails() {
         thrown.expect(HystrixRuntimeException.class);
         thrown.expectCause(isA(FeignException.class));
