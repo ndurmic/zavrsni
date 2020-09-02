@@ -3,11 +3,11 @@ version: "3.2"
 services:
   # DISCOVERY SERVICE
   discovery:
-    build:
-      context: ./eureka-service
-      dockerfile: Dockerfile
+    image: my.demo.springboot.microservice.eureka/eureka-service:0.0.1-SNAPSHOT
+    deploy:
+      replicas: 1
     ports:
-    - 8761:8761
+      - "8761:8761"
     logging:
       driver: syslog
       options:
@@ -15,11 +15,11 @@ services:
 
   # SERVICES
   account:
-    build:
-      context: ./account-service
-      dockerfile: Dockerfile
+    image: my.demo.springboot.microservice.account/account-service:0.0.1-SNAPSHOT
+    deploy:
+      replicas: 1
     ports:
-    - 8081:8081
+      - "8081:8081"
     logging:
       driver: syslog
       options:
@@ -30,11 +30,11 @@ services:
     - discovery
 
   todo:
-    build:
-      context: ./todo-service
-      dockerfile: Dockerfile
+    image: my.demo.springboot.microservice.todo/todo-service:0.0.1-SNAPSHOT
+    deploy:
+      replicas: 1
     ports:
-    - 9090:9090
+      - "9090:9090"
     logging:
       driver: syslog
       options:
